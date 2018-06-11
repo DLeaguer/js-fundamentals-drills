@@ -17,11 +17,21 @@ var doubleArray = function(arr) {
  *
  * Takes in two arrays of numbers and returns the sum of both arrays.
  *
- * @param {Array}
- * @param {Array}
- * @return {Bool}
+ * @param {Array} // [1,2,3]
+ * @param {Array} // [4,5,6]
+ * @return {Bool} // 21
  */
-var sumArrays;
+var sumArrays = function(arr1, arr2) {
+  var sum = 0;
+  for (var i = 0; i < arr1.length; i++) {
+    sum += arr1[i];
+  }
+  for (var j = 0; j < arr2.length; j++) {
+    sum += arr2[j];
+  }
+  return sum;
+}
+
 
 /* #stringCount
  *
@@ -30,7 +40,9 @@ var sumArrays;
  * @param {String}
  * @return {Number}
  */
-var stringCount;
+var stringCount = function(str) {
+  return str.length;
+}
 
 /* #arrayLength
  *
@@ -39,7 +51,9 @@ var stringCount;
  * @param {Array}
  * @return {Number}
  */
-var arrayLength;
+var arrayLength = function(arr) {
+  return arr.length;
+}
 
 /* #countAll
  *
@@ -48,25 +62,43 @@ var arrayLength;
  * @param {Array}
  * @return {Number}
  */
-var countAll;
+var countAll = function(arr) {
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
 
 /* #countStrings
  *
  * Takes in an array of strings and returns an array of string lengths.
  *
- * @param {Array}
+ * @param {Array} // ['dog', 'cat', 'bird']
  * @return {Array}
  */
-var countStrings;
+var countStrings = function(arr) {
+  var strLengths = [];
+  for (var i = 0; i < arr.length; i++) {
+    strLengths.push(arr[i].length);
+  }
+  return strLengths;
+}
 
 /* #countAllStrings
  *
  * Takes in an array of strings and returns the sum of all string lengths.
  *
- * @param {String}
+ * @param {String} // ['dog', 'cat', 'bird']
  * @return {Number}
  */
-var countAllStrings;
+var countAllStrings = function(str) {
+  var strLengths = 0;
+  for (var i = 0; i < str.length; i++) {
+    strLengths += str[i].length;
+  }
+  return strLengths;
+}
 
 /* #convertToArray
  *
@@ -75,7 +107,14 @@ var countAllStrings;
  * @param {Object}
  * @return {Array}
  */
-var convertToArray;
+var convertToArray = function(obj) {
+  var arr = [];
+  for (var key in obj) {
+    arr.push(obj[key]);
+  }
+  console.log(arr);
+  return arr;
+}
 
 /* #objectSize
  *
@@ -84,7 +123,16 @@ var convertToArray;
  * @param {Object}
  * @return {Number}
  */
-var objectSize;
+var objectSize = function(obj) {
+  var count = 0;
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) {
+        count++;
+    }
+  }
+  console.log(count);
+  return count;
+}
 
 /* #createZeroFilledArray
  *
@@ -93,7 +141,16 @@ var objectSize;
  * @param {Number}
  * @return {Zero}
  */
-var createZeroFilledArray;
+var createZeroFilledArray = function(num) {
+  console.log(num);
+  var zeros = [];
+  for (var i = 0; i < num; i++) {
+    zeros.push(0);
+  }
+  console.log(zeros);
+  return zeros;
+}
+
 
 /* #poppedArray
  *
@@ -102,7 +159,10 @@ var createZeroFilledArray;
  * @param {Array}
  * @return {Array}
  */
-var poppedArray;
+var poppedArray = function(arr) {
+  arr.splice(-1);
+  return arr;
+}
 
 /* #splitString
  *
@@ -111,7 +171,10 @@ var poppedArray;
  * @param {String}
  * @return {Array}
  */
-var splitString;
+var splitString = function(str) {
+  var arr = str.split("");
+  return arr;
+}
 
 /* #lengthOfLast
  *
@@ -120,7 +183,13 @@ var splitString;
  * @param {String}
  * @return {Number}
  */
-var lengthOfLast;
+var lengthOfLast = function(str) {
+  console.log(str);
+  var lastStr = str.pop();
+  console.log(lastStr);
+  console.log(lastStr.length);
+  return lastStr.length;
+}
 
 /* #sumBelowTen
  *
@@ -129,16 +198,38 @@ var lengthOfLast;
  * @param {Array}
  * @return {Number}
  */
-var sumBelowTen;
+var sumBelowTen = function(arr) {
+  var sum = 0;
+  for (var i = 0; i < 10; i++) {
+    if (typeof arr[i] !== typeof undefined && arr[i] < 10) {
+      sum += arr[i];
+      console.log('arr[i] ' + arr[i]);
+     }
+  }
+  console.log('sum ' + sum);
+  return sum;
+}
+
 
 /* #moreThanTenLetters
  *
  * Takes in an array of strings and returns the amount of elements that have more than ten letters.
- *
+ *HANDY LINKS
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters;
+var moreThanTenLetters = function(str) {
+  var count = 0;
+  for (var i = 0; i < str.length; i++) {
+    console.log(str[i]);
+    if (str[i].length > 10) {
+      console.log(str[i]);
+      count++;
+    }
+  }
+  console.log(count);
+  return count;
+}
 
 /* #multiplyAll
  *
@@ -370,43 +461,43 @@ var tupleConvertToObject;
 
 
 module.exports = {
-  doubleArray: null,
-  sumArrays: null, 
-  stringCount: null,
-  arrayLength: null,
-  countAll: null,
-  countStrings: null,
-  countAllStrings: null,
-  convertToArray: null,
-  objectSize: null,
-  createZeroFilledArray: null,
-  poppedArray: null,
-  splitString: null,
-  lengthOfLast: null,
-  sumBelowTen: null,
-  moreThanTenLetters: null,
-  multiplyAll: null,
-  sumAllPositive: null,
-  stringCountBelowThree: null,
-  countObjects: null,
-  getObjectKeys: null,
-  getObjectValues: null,
-  makeObject: null,
-  makeObjectReverse: null,
-  tupleToObject: null,
-  tupleToObjectReverse: null,
-  strToKeys: null,
-  getValues: null,
-  getKeys: null,
-  objectToArray: null,
-  arrayToObject: null,
-  arraysToObject: null,
-  objectsToTuples: null,
-  mapArrayValues: null,
-  mapStringCounts: null,
-  arrayToObjectNums: null,
-  stringToKeys: null,
-  charCountMap: null,
-  frequencyMap: null,
-  tupleConvertToObject: null
+  doubleArray: doubleArray,
+  sumArrays: sumArrays, 
+  stringCount: stringCount,
+  arrayLength: arrayLength,
+  countAll: countAll,
+  countStrings: countStrings,
+  countAllStrings: countAllStrings,
+  convertToArray: convertToArray,
+  objectSize: objectSize,
+  createZeroFilledArray: createZeroFilledArray,
+  poppedArray: poppedArray,
+  splitString: splitString,
+  lengthOfLast: lengthOfLast,
+  sumBelowTen: sumBelowTen,
+  moreThanTenLetters: moreThanTenLetters,
+  multiplyAll: multiplyAll,
+  sumAllPositive: sumAllPositive,
+  stringCountBelowThree: stringCountBelowThree,
+  countObjects: countObjects,
+  getObjectKeys: getObjectKeys,
+  getObjectValues: getObjectValues,
+  makeObject: makeObject,
+  makeObjectReverse: makeObjectReverse,
+  tupleToObject: tupleToObject,
+  tupleToObjectReverse: tupleToObjectReverse,
+  strToKeys: strToKeys,
+  getValues: getValues,
+  getKeys: getKeys,
+  objectToArray: objectToArray,
+  arrayToObject: arrayToObject,
+  arraysToObject: arrayToObject,
+  objectsToTuples: objectsToTuples,
+  mapArrayValues: mapArrayValues,
+  mapStringCounts: mapStringCounts,
+  arrayToObjectNums: arrayToObjectNums,
+  stringToKeys: stringToKeys,
+  charCountMap: charCountMap,
+  frequencyMap: frequencyMap,
+  tupleConvertToObject: tupleConvertToObject
 }
