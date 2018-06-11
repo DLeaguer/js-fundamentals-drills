@@ -470,13 +470,15 @@ var getKeys = function(obj) {
  */
 var objectToArray = function(obj) {
   console.log(obj);
+  // var arr = Object.entries(obj);
+  // console.log(arr);
+  // return arr;
   var arr = [];
-  for (var key in obj) {
-    console.log(Object.keys(obj));
-    arr.push(Object.keys(obj).obj[key]);
-  }
-  console.log(Object.keys[obj]);
-  return Object.keys[obj];
+    for (var key in obj) {
+      arr.push([key, obj[key]]);
+    }
+    console.log(arr);
+    return arr;
 }
 
 /* #arrayToObject
@@ -487,7 +489,15 @@ var objectToArray = function(obj) {
  * @param {Array}
  * @return {Object}
  */
-var arrayToObject;
+var arrayToObject = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    obj[arr[i]] = false;
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #arraysToObject
  *
@@ -498,7 +508,15 @@ var arrayToObject;
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject;
+var arraysToObject = function(key, value) {
+  console.log(key, value);
+  var obj = {};
+  for (var i = 0; i < key.length; i++) {
+    obj[key[i]] = value[i];
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #objectsToTuples
  *
@@ -508,7 +526,18 @@ var arraysToObject;
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples;
+var objectsToTuples = function(obj1, obj2) {
+  console.log(obj1, obj2);
+  var arr = [];
+  for (var key in obj1) {
+    arr.push([key, obj1[key]]);
+  }
+  for (var prop in obj2) {
+    arr.push([prop, obj2[prop]]);
+  }
+  console.log(arr);
+  return arr;
+}
 
 /* #mapArrayValues
  *
@@ -517,7 +546,15 @@ var objectsToTuples;
  * @param {Array}
  * @return {Object}
  */
-var mapArrayValues;
+var mapArrayValues = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+   obj[arr[i]] = true;
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #mapStringCounts
  *
@@ -528,7 +565,20 @@ var mapArrayValues;
  * @param {Array}
  * @return {Object}
  */
-var mapStringCounts;
+var mapStringCounts = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length >= 5) {
+      obj[arr[i]] = true;
+    }
+    else {
+      obj[arr[i]] = false;
+    }
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #arrayToObjectNums
  *
@@ -538,7 +588,15 @@ var mapStringCounts;
  * @param {Array}
  * @return {Object}
  */
-var arrayToObjectNums;
+var arrayToObjectNums = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    obj[arr[i]] = true;
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #stringToKeys
  *
@@ -547,7 +605,17 @@ var arrayToObjectNums;
  * @param {String}
  * @return {Object}
  */
-var stringToKeys;
+var stringToKeys = function(str) {
+  console.log(str);
+  var arr = str.split('');
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    obj[arr[i]] = true;
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #charCountMap
  *
@@ -557,7 +625,15 @@ var stringToKeys;
  * @param {Array}
  * @return {Object}
  */
-var charCountMap;
+var charCountMap = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    obj[arr[i]] = arr[i].length;
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #frequencyMap
  *
@@ -566,7 +642,21 @@ var charCountMap;
  * @param {String}
  * @return {Bool}
  */
-var frequencyMap;
+var frequencyMap = function(str) {
+  console.log(str);
+  var obj = {}, i, value;
+  for (var i = 0; i < str.length; i++) {
+    value = str[i];
+    if (typeof obj[value] === 'undefined') {
+      obj[value] = 1;
+    }
+    else {
+      obj[value]++;
+    }
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #tupleConvertToObject
  *
@@ -576,7 +666,19 @@ var frequencyMap;
  * @param {String}
  * @return {Bool}
  */
-var tupleConvertToObject;
+var tupleConvertToObject = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    for (var j = 0; j < arr[i].length-1; j++) {
+      console.log(arr[i][j]);
+      obj[arr[i][j]] = arr[i][j + 1];
+    }
+  }
+  console.log(obj);
+  return obj;
+}
 
 
 module.exports = {
@@ -610,7 +712,7 @@ module.exports = {
   getKeys: getKeys,
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
-  arraysToObject: arrayToObject,
+  arraysToObject: arraysToObject,
   objectsToTuples: objectsToTuples,
   mapArrayValues: mapArrayValues,
   mapStringCounts: mapStringCounts,
