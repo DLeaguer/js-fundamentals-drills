@@ -315,7 +315,14 @@ var countObjects = function(arr) {
  * @param {Object}
  * @return {Array}
  */
-var getObjectKeys;
+var getObjectKeys = function(obj) {
+  console.log(obj);
+  for (var key in obj) {
+    console.log(obj[key]);
+  }
+  console.log(Object.keys(obj));
+  return Object.keys(obj);
+}
 
 /* #getObjectValues
  *
@@ -324,7 +331,16 @@ var getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues;
+var getObjectValues = function(obj) {
+  console.log(obj);
+  var arr = [];
+  for (var key in obj) {
+    console.log(obj[key]);
+    arr.push(obj[key]);
+  }
+  console.log(arr);
+  return arr;
+}
 
 /* #makeObject
  *
@@ -334,7 +350,14 @@ var getObjectValues;
  * @param {String}
  * @return {Object}
  */
-var makeObject;
+var makeObject = function(key, value) {
+  console.log(key);
+  console.log(value);
+  var obj = {};
+  obj[key] = value;
+  console.log(obj);
+  return obj;
+}
 
 /* #makeObjectReverse
  *
@@ -344,7 +367,14 @@ var makeObject;
  * @param {String}
  * @return {Bool}
  */
-var makeObjectReverse;
+var makeObjectReverse = function(value, key) {
+  console.log(value);
+  console.log(key);
+  var obj = {};
+  obj[key] = value;
+  console.log(obj);
+  return obj;
+}
 
 /* #tupleToObject
  *
