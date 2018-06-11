@@ -238,7 +238,16 @@ var moreThanTenLetters = function(str) {
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+var multiplyAll = function(arr) {
+  console.log(arr);
+  var product = 1;
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    product *= arr[i];
+  }
+  console.log(product);
+  return product;
+}
 
 /* #sumAllPositive
  *
@@ -247,7 +256,18 @@ var multiplyAll;
  * @param {String}
  * @return {Number}
  */
-var sumAllPositive;
+var sumAllPositive = function(str) {
+  console.log(str);
+  var sum = 0;
+  for (var i = 0; i < str.length; i++) {
+    console.log(str[i]);
+    if (str[i] > 0) {
+      sum += str[i];
+    }
+  }
+  console.log(sum);
+  return sum;
+}
 
 /* #stringCountBelowThree
  *
@@ -256,7 +276,19 @@ var sumAllPositive;
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
+var stringCountBelowThree = function(arr) {
+  console.log(arr);
+  var count = 0;
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    if (arr[i].length <= 3) {
+      count++;
+      console.log(count);
+    }
+  }
+  console.log(count);
+  return count;
+}
 
 /* #countObjects
  *
@@ -265,7 +297,16 @@ var stringCountBelowThree;
  * @param {Array}
  * @return {Number}
  */
-var countObjects;
+var countObjects = function(arr) {
+  console.log(arr);
+  var count = 0;
+  for (var key in arr) {
+    console.log(arr[key]);
+    count++;
+  }
+  console.log(count);
+  return count;
+}
 
 /* #getObjectKeys
  *
