@@ -383,7 +383,16 @@ var makeObjectReverse = function(value, key) {
  * @param {Array}
  * @return {Object}
  */
-var tupleToObject;
+var tupleToObject = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length-1; i++) {
+    console.log(arr[i] + ' ' +arr[i + 1]);
+    obj[arr[i]] = arr[i + 1];
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #tupleToObjectReverse
  *
@@ -392,7 +401,16 @@ var tupleToObject;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObjectReverse;
+var tupleToObjectReverse = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length-1; i++) {
+    console.log(arr[i] + ' ' + arr[i + 1]);
+    obj[arr[i + 1]] = arr[i];
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #strToKeys
  *
@@ -401,7 +419,16 @@ var tupleToObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(arr) {
+  console.log(arr);
+  var obj = {};
+  for (var i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+    obj[arr[i]] = 0;
+  }
+  console.log(obj);
+  return obj;
+}
 
 /* #getValues
  *
@@ -410,7 +437,15 @@ var strToKeys;
  * @param {Object}
  * @return {Array}
  */
-var getValues;
+var getValues = function(obj) {
+  console.log(obj);
+  var arr = [];
+  for (var key in obj) {
+    arr.push(obj[key]);
+  }
+  console.log(arr);
+  return arr;
+}
 
 /* #getKeys
  *
@@ -419,7 +454,11 @@ var getValues;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj) {
+  console.log(obj);
+  console.log(Object.keys(obj));
+  return Object.keys(obj);
+}
 
 /* #objectToArray
  *
@@ -429,7 +468,16 @@ var getKeys;
  * @param {Object}
  * @return {Array}
  */
-var objectToArray;
+var objectToArray = function(obj) {
+  console.log(obj);
+  var arr = [];
+  for (var key in obj) {
+    console.log(Object.keys(obj));
+    arr.push(Object.keys(obj).obj[key]);
+  }
+  console.log(Object.keys[obj]);
+  return Object.keys[obj];
+}
 
 /* #arrayToObject
  *
