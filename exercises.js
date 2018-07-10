@@ -593,11 +593,14 @@ var charCountMap = function(arr) {
  */
 var frequencyMap = function(arr) {
   let obj = {};
-  let count = 0;
+  let count = 1;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === arr[i+1]) {
       count++;
     }
+    // if (arr[i] !== arr[i+1]) {
+    //   count = 1;
+    // }
     obj[arr[i]] = count;
   }
   return obj;
@@ -611,7 +614,15 @@ var frequencyMap = function(arr) {
  * @param {String}
  * @return {Bool}
  */
-var tupleConvertToObject;
+var tupleConvertToObject = function(arr) {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length-1; j++) {
+      obj[arr[i][j]] = arr[i][j+1];
+    }
+  }
+  return obj;
+}
 
 
 module.exports = {
