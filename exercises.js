@@ -593,15 +593,19 @@ var charCountMap = function(arr) {
  */
 var frequencyMap = function(arr) {
   let obj = {};
-  let count = 1;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === arr[i+1]) {
-      count++;
+    if (obj[arr[i]]) {
+      console.log('if obj[arr[i]] is true', obj[arr[i]]);
+      console.log('true arr[i]', arr[i]);
+      obj[arr[i]] += 1;
+      console.log('add 1 to obj[arr[i]]', obj);
     }
-    // if (arr[i] !== arr[i+1]) {
-    //   count = 1;
-    // }
-    obj[arr[i]] = count;
+    else {
+      console.log('if obj[arr[i]] is false', obj[arr[i]]);
+      console.log('false arr[i]', arr[i]);
+      obj[arr[i]] = 1;
+      console.log('obj[arr[i] = 1', obj);
+    }
   }
   return obj;
 }
