@@ -126,11 +126,21 @@ var convertToArray = function(obj) {
  * @return {Number}
  */
 var objectSize = function(obj) {
-  console.log('obj', obj);
-  console.log('Object.keys', Object.keys(obj));
-  console.log('Ojbect.values', Object.values(obj));
-  console.log('Object.keys(obj).length', Object.keys(obj).length);
-  return Object.keys(obj).length;
+  let amt = 0;
+  for (let i in obj) {
+    if (obj[i]) {
+      console.log('if obj[i] is true', obj[i]);
+      amt += 1;
+      console.log('add 1 to amt', amt);
+    }
+  }
+  console.log('amt', amt);
+  return amt;
+  // console.log('obj', obj);
+  // console.log('Object.keys', Object.keys(obj));
+  // console.log('Ojbect.values', Object.values(obj));
+  // console.log('Object.keys(obj).length', Object.keys(obj).length);
+  // return Object.keys(obj).length;
 }
 
 /* #createZeroFilledArray
